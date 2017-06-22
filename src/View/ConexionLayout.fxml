@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="408.0" prefWidth="422.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.ConexionLayoutController">
+   <children>
+      <BorderPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <AnchorPane BorderPane.alignment="CENTER">
+               <children>
+                  <GridPane layoutY="14.0" prefHeight="141.0" prefWidth="422.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="202.0" minWidth="10.0" prefWidth="121.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="301.0" minWidth="10.0" prefWidth="295.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                           <left>
+                              <Label text="Servidor:" BorderPane.alignment="CENTER" />
+                           </left>
+                           <GridPane.margin>
+                              <Insets left="15.0" top="25.0" />
+                           </GridPane.margin>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                           <left>
+                              <Label text="Base de datos:" BorderPane.alignment="CENTER" />
+                           </left>
+                           <GridPane.margin>
+                              <Insets left="15.0" top="25.0" />
+                           </GridPane.margin>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                           <left>
+                              <Label text="Usuario:" BorderPane.alignment="CENTER" />
+                           </left>
+                           <GridPane.margin>
+                              <Insets left="15.0" top="25.0" />
+                           </GridPane.margin>
+                        </BorderPane>
+                        <BorderPane prefHeight="17.0" prefWidth="69.0" GridPane.rowIndex="3">
+                           <left>
+                              <Label text="Contraseña:" BorderPane.alignment="CENTER" />
+                           </left>
+                           <GridPane.margin>
+                              <Insets left="15.0" top="25.0" />
+                           </GridPane.margin>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                           <left>
+                              <TextField fx:id="txt_servidor" onKeyTyped="#change" prefHeight="25.0" prefWidth="215.0" BorderPane.alignment="CENTER" />
+                           </left>
+                           <GridPane.margin>
+                              <Insets top="25.0" />
+                           </GridPane.margin>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <left>
+                              <TextField fx:id="txt_bbdd" onInputMethodTextChanged="#change" onKeyTyped="#change" prefWidth="215.0" BorderPane.alignment="CENTER" />
+                           </left>
+                           <GridPane.margin>
+                              <Insets top="25.0" />
+                           </GridPane.margin>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <left>
+                              <TextField fx:id="txt_user" onInputMethodTextChanged="#change" onKeyTyped="#change" prefWidth="215.0" BorderPane.alignment="CENTER" />
+                           </left>
+                           <GridPane.margin>
+                              <Insets top="25.0" />
+                           </GridPane.margin>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets top="25.0" />
+                           </GridPane.margin>
+                           <left>
+                              <PasswordField fx:id="txt_pass" onInputMethodTextChanged="#change" onKeyTyped="#change" prefWidth="215.0" BorderPane.alignment="CENTER" />
+                           </left>
+                        </BorderPane>
+                     </children>
+                  </GridPane>
+                  <Button fx:id="btn_test" layoutX="158.0" layoutY="172.0" mnemonicParsing="false" onAction="#testConexion" text="Test de conexión" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" />
+                  <Label fx:id="lbl_test" alignment="CENTER" layoutX="118.0" layoutY="209.0" prefHeight="17.0" prefWidth="187.0" AnchorPane.leftAnchor="115.0" AnchorPane.rightAnchor="115.0" />
+               </children>
+            </AnchorPane>
+         </center>
+         <bottom>
+            <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <items>
+                <Button fx:id="btn_apply" mnemonicParsing="false" onAction="#aplicar" text="Aplicar" />
+                  <Button cancelButton="true" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+                  <Button fx:id="btn_acept" mnemonicParsing="false" onAction="#aceptar" text="Aceptar" />
+              </items>
+            </ToolBar>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
